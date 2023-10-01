@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="./css/styles.css">
     <title>Degraphe Video Recorder</title>
 </head>
-<body class="hngsr-popup">
-    <div class="content">
+<body>
+    <div class="hngsr-popup content">
         <div class="heading">
             <div class="logo gap">
                 <img src="images/icon.png" alt="logo">
@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <div>
+        <div class="sub-heading">
             <p>This extension helps you record and share help videos with ease.</p>
         </div>
 
@@ -46,7 +46,7 @@
                 <p>Full screen</p>
             </button>
 
-            <button>
+            <button class="active">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21.3332 17.2001V22.8001C21.3332 27.4667 19.4665 29.3334 14.7998 29.3334H9.19984C4.53317 29.3334 2.6665 27.4667 2.6665 22.8001V17.2001C2.6665 12.5334 4.53317 10.6667 9.19984 10.6667H14.7998C19.4665 10.6667 21.3332 12.5334 21.3332 17.2001Z" stroke="#120B48" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M29.3332 9.20008V14.8001C29.3332 19.4667 27.4665 21.3334 22.7998 21.3334H21.3332V17.2001C21.3332 12.5334 19.4665 10.6667 14.7998 10.6667H10.6665V9.20008C10.6665 4.53341 12.5332 2.66675 17.1998 2.66675H22.7998C27.4665 2.66675 29.3332 4.53341 29.3332 9.20008Z" stroke="#120B48" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -56,18 +56,41 @@
             </button>
         </div>
 
+        <div class="camdio">
+            <div class="gap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15.75 10.5L20.4697 5.78033C20.9421 5.30786 21.75 5.64248 21.75 6.31066V17.6893C21.75 18.3575 20.9421 18.6921 20.4697 18.2197L15.75 13.5M4.5 18.75H13.5C14.7426 18.75 15.75 17.7426 15.75 16.5V7.5C15.75 6.25736 14.7426 5.25 13.5 5.25H4.5C3.25736 5.25 2.25 6.25736 2.25 7.5V16.5C2.25 17.7426 3.25736 18.75 4.5 18.75Z" stroke="#0F172A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p>Camera</p>
+            </div>
+            <div>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+        <div class="camdio">
+            <div class="gap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 18.75C15.3137 18.75 18 16.0637 18 12.75V11.25M12 18.75C8.68629 18.75 6 16.0637 6 12.75V11.25M12 18.75V22.5M8.25 22.5H15.75M12 15.75C10.3431 15.75 9 14.4069 9 12.75V4.5C9 2.84315 10.3431 1.5 12 1.5C13.6569 1.5 15 2.84315 15 4.5V12.75C15 14.4069 13.6569 15.75 12 15.75Z" stroke="#0F172A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p>Audio</p>
+            </div>
+            <div>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+
 
         <div class="button_cont">
             <button id="start_video">START VIDEO</button>
         </div>
-<!--        <br>-->
-<!--        <div class="button_cont">-->
-<!--            <button id="stop_video">STOP VIDEO</button>-->
-<!--        </div>-->
-
     </div>
 
     <script src="./js/popup.js"></script>
-
 </body>
 </html>

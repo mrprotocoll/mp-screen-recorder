@@ -10,30 +10,28 @@
 }
 
 
-.hngsr-popup .content{
-    padding: 10px;
+.hngsr-popup {
+    padding: 32px;
     min-width: 300px;
+    border-radius: 24px;
+    background: #FFF;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10);
 }
 
 .hngsr-popup .button_cont button{
-    padding: 10px;
+    padding: 16px;
     border: none;
     border-radius: 10px;
-    background: teal;
+    background: var(--hngsr-pri);
     color: white;
     width: 100%;
-
-}
-
-.hngsr-popup .button_cont button:hover{
-    box-shadow: 1px 0px 10p #eee;
+    cursor: pointer;
 }
 
 .hngsr-popup .heading {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 0;
 }
 
 .hngsr-popup .gap{
@@ -51,13 +49,14 @@
     color: var(--hngsr-pri);
 }
 
-.hngsr-popup p {
+.hngsr-popup .sub-heading p {
     font-family: Work Sans, sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     color: #413C6D;
+    margin: 16px 0;
 }
 
 .hngsr-popup .screen {
@@ -71,10 +70,21 @@
     background: transparent;
     border: 0;
     color: var(--hngsr-pri-200);
+    margin: 20px 0;
+    cursor: pointer;
 }
 
-.hngsr-popup .screen svg {
-    color: var(--hngsr-pri-200);
+.hngsr-popup .screen svg path{
+    stroke: var(--hngsr-pri-200);
+}
+
+.hngsr-popup .screen button.active svg path{
+    stroke: var(--hngsr-pri);
+}
+
+.hngsr-popup .screen button.active p{
+    color: var(--hngsr-pri);
+    font-weight: 600;
 }
 
 .hngsr-popup .screen p {
@@ -84,4 +94,156 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+}
+
+.hngsr-popup .switch {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+}
+
+.hngsr-popup .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.hngsr-popup .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.hngsr-popup .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.hngsr-popup input:checked + .slider {
+    background-color: var(--hngsr-pri);
+}
+
+.hngsr-popup input:focus + .slider {
+    box-shadow: 0 0 1px var(--hngsr-pri);
+}
+
+.hngsr-popup input:checked + .slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.hngsr-popup .slider.round {
+    border-radius: 34px;
+}
+
+.hngsr-popup .slider.round:before {
+    border-radius: 50%;
+}
+
+.hngsr-popup .camdio {
+    display: flex;
+    padding: 12px 16px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 16px;
+    border: 1px solid var(--hngsr-pri);
+    margin: 20px 0;
+}
+
+.hngsr-popup .camdio div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hngsr-popup .camdio p {
+    font-family: Work Sans, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--hngsr-pri);
+}
+
+.hngsr-popup .controls {
+    position: fixed;
+    bottom: 10px;
+    display: flex;
+    border-radius: 200px;
+    background: #141414;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 8px 40px 8px 16px;
+    margin: 20px;
+    width: 551px;
+    border: 8px solid #E5E5E5;
+    z-index: 99999999;
+}
+
+.hngsr-popup .controls .recording-icon {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+    border-radius: 17px;
+    background: #C00404;
+    margin: 0 10px;
+}
+
+.hngsr-popup .duration {
+    border-right: 1px solid #E8E8E8;
+    padding: 16px;
+    display: flex;
+    color: #FFFFFF;
+    justify-content: center;
+    align-items: center;
+}
+
+.hngsr-popup .control-icons{
+    display: flex;
+    column-gap: 24px;
+}
+
+.hngsr-popup .control {
+    border-radius: 32px;
+    border: 1px solid #FFF;
+    background: #FFF;
+    display: flex;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.hngsr-popup .controls p {
+    color: #FFFFFF;
+    font-family: Work Sans, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+    padding-top: 3px;
+}
+
+.hngsr-popup .controls .delete {
+    border: 1px solid #000;
+    background: #4B4B4B;
 }
