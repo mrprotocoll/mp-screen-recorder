@@ -1,8 +1,8 @@
-console.log("Hi, I have been injected whoopie!!!")
+console.log("Hi, HelpMeOut is ready when you are ready")
 
 var recorder = null;
 var isRecording = false;
-var chunkSize = 5000; // Set your desired chunk size in milliseconds
+var chunkSize = 10000; // Set your desired chunk size in milliseconds
 var mediaStream = null;
 var checksum = null;
 var id = null;
@@ -79,12 +79,6 @@ chrome.runtime.onMessage.addListener( (message, sender, sendResponse)=>{
         })
     }
 
-    // if(message.action === "stopvideo"){
-    //     console.log("stopping video");
-    //     sendResponse(`processed: ${message.action}`);
-    //     stopRecording()
-    // }
-
 })
 function startStreamingOnApproved(stream, id){
 
@@ -132,20 +126,14 @@ function startRecording() {
 function sendVideoChunkToServer(chunk) {
     const endpoint = 'http://localhost:8000/api/v1/recordings/'+ id + '/chunk';
     const formData = new FormData();
-    const jsonData = {
-        blob: new Blob([chunk]),
-        isLastChunk: isLastChunk,
-        name: id+'_videochunk.webm',// Modify as needed
-        size: chunk.size
-    };
 
-    // formData.append('file', chunk, 'videochunk.webm');
-    // formData.append('isLastChunk', isLastChunk);
+    formData.append('file', chunk, 'vid.webm');
+    formData.append('isLastChunk', isLastChunk);
 
     fetch(endpoint, {
         method: 'POST',
-        // body: formData,
-        body: chunk,
+        body: formData,
+        // body: chunk,
     })
     .then((response) => {
         if (response.ok) {
