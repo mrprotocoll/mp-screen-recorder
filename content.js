@@ -2,7 +2,7 @@ console.log("Hi, HelpMeOut is ready when you are ready")
 
 var recorder = null;
 var isRecording = false;
-var chunkSize = 10000; // Set your desired chunk size in milliseconds
+var chunkSize = 5000; // Set your desired chunk size in milliseconds
 var mediaStream = null;
 var checksum = null;
 var id = null;
@@ -124,6 +124,7 @@ function startRecording() {
 }
 
 function sendVideoChunkToServer(chunk) {
+    // hngs5.mrprotocoll.me
     const endpoint = 'http://localhost:8000/api/v1/recordings/'+ id + '/chunk';
     const formData = new FormData();
 

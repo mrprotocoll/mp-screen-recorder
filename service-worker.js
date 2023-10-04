@@ -10,5 +10,3 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab)=>{
         }).catch(err=> console.log(err, "error in background script line 10"))
     }
 })
-
-
