@@ -1,6 +1,4 @@
 .hngsr-popup .controls {
-    position: fixed;
-    bottom: 10px;
     display: flex;
     border-radius: 200px;
     background: #141414;
