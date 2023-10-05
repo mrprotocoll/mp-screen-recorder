@@ -4,13 +4,12 @@ var recorder = null;
 var isRecording = false;
 var chunkSize = 5000; // Set your desired chunk size in milliseconds
 var mediaStream = null;
-var checksum = null;
 var id = null;
 var timerInterval = null;
 var filename = new Date().getTime();
 var isLastChunk = false;
 
-const controls = `
+const controlsView = `
 <div class="controls">
     <div class="duration">
         <time id="timer">00:00:00</time>
@@ -128,7 +127,7 @@ function sendVideoChunkToServer(chunk) {
     const endpoint = 'http://localhost:8000/api/v1/recordings/'+ id + '/chunk';
     const formData = new FormData();
 
-    formData.append('file', chunk, 'vid.webm');
+    formData.append('file', chunk, filename+'.webm');
     formData.append('isLastChunk', isLastChunk);
 
     fetch(endpoint, {
@@ -167,9 +166,80 @@ function displayControls()  {
     console.log("appended")
     const tempElement = document.createElement('div');
 
-    tempElement.innerHTML = controls;
+    tempElement.innerHTML = controlsView;
     tempElement.className = 'hngsr-popup';
     document.body.appendChild(tempElement);
+    addCss(`
+        .hngsr-popup .controls {
+        position: fixed;
+        bottom: 10px;
+        display: flex;
+        border-radius: 200px;
+        background: #141414;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        padding: 8px 40px 8px 16px;
+        margin: 20px;
+        width: 551px;
+        border: 8px solid #E5E5E5;
+        z-index: 99999999;
+    }
+    
+    .hngsr-popup .controls .recording-icon {
+        width: 10px;
+        height: 10px;
+        flex-shrink: 0;
+        border-radius: 17px;
+        background: #C00404;
+        margin: 0 10px;
+    }
+    
+    .hngsr-popup .duration {
+        border-right: 1px solid #E8E8E8;
+        padding: 16px;
+        display: flex;
+        color: #FFFFFF;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .hngsr-popup .control-icons{
+        display: flex;
+        column-gap: 24px;
+    }
+    
+    .hngsr-popup .control {
+        border-radius: 32px;
+        border: 1px solid #FFF;
+        background: #FFF;
+        display: flex;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+    }
+    
+    .hngsr-popup .controls p {
+        color: #FFFFFF;
+        font-family: Work Sans, sans-serif;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-align: center;
+        padding-top: 3px;
+    }
+    
+    .hngsr-popup .controls .delete {
+        border: 1px solid #000;
+        background: #4B4B4B;
+    }
+
+    `);
 }
 
 function startTimer() {
@@ -198,3 +268,5 @@ function startTimer() {
 function stopTimer() {
     clearInterval(timerInterval);
 }
+
+const addCss = css => document.head.appendChild(document.createElement('style')).innerHTML = css;
