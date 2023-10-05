@@ -282,6 +282,21 @@
 
 }
 
+.hngsr-popup .transcript h2{
+    color: #000;
+    font-family: Sora, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.hngsr-popup .transcript select {
+    border-radius: 4px;
+    border: 1px solid #CFCFCF;
+    padding: 8px;
+}
+
+
 
 /* Modal  */
 .hngsr-popup .modal {
