@@ -13,7 +13,7 @@ var isLastChunk = false;
 
 const controlsView = `
 <div class="record">
-    <div class="videoContainer">
+    <div class="videoContainer" id="videoContainer">
         <video id="videoElement" autoplay></video>
     </div>
         
@@ -44,7 +44,7 @@ const controlsView = `
                         <p>Stop</p>
                     </div>
                     <div>
-                        <button class="control">
+                        <button class="control" id="hngsr-camera">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M15.75 10.5L20.4697 5.78033C20.9421 5.30786 21.75 5.64248 21.75 6.31066V17.6893C21.75 18.3575 20.9421 18.6921 20.4697 18.2197L15.75 13.5M4.5 18.75H13.5C14.7426 18.75 15.75 17.7426 15.75 16.5V7.5C15.75 6.25736 14.7426 5.25 13.5 5.25H4.5C3.25736 5.25 2.25 6.25736 2.25 7.5V16.5C2.25 17.7426 3.25736 18.75 4.5 18.75Z" stroke="#0F172A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
@@ -113,6 +113,8 @@ function startStreamingOnApproved(stream){
 
 function startUserCameraRecording() {
     navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+        document.getElementById('videoContainer').style.display = 'block';
+        
         videoStream = stream;
         const videoElement = document.getElementById('videoElement');
         videoElement.srcObject = stream;
@@ -291,6 +293,8 @@ function displayControls()  {
     }
 
     `);
+
+    toggleCamera();
 }
 
 function startTimer() {
@@ -321,3 +325,38 @@ function stopTimer() {
 }
 
 const addCss = css => document.head.appendChild(document.createElement('style')).innerHTML = css;
+
+
+const toggleCamera = () => {
+
+    let camera = true;
+    const offIcon = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.63 7.58008C16.63 7.58008 16.66 6.63008 16.63 6.32008C16.46 4.28008 15.13 3.58008 12.52 3.58008H6.21C3.05 3.58008 2 4.63008 2 7.79008V16.2101C2 17.4701 2.38 18.7401 3.37 19.5501L4 20.0001" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.7398 10.95V16.21C16.7398 19.37 15.6898 20.42 12.5298 20.42H7.25977" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.0002 6.73999V15.81C22.0002 17.48 20.8802 18.06 19.5202 17.1L16.7402 15.15" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.02 2.18994L2.02002 22.1899" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`
+    const onIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M15.75 10.5L20.4697 5.78033C20.9421 5.30786 21.75 5.64248 21.75 6.31066V17.6893C21.75 18.3575 20.9421 18.6921 20.4697 18.2197L15.75 13.5M4.5 18.75H13.5C14.7426 18.75 15.75 17.7426 15.75 16.5V7.5C15.75 6.25736 14.7426 5.25 13.5 5.25H4.5C3.25736 5.25 2.25 6.25736 2.25 7.5V16.5C2.25 17.7426 3.25736 18.75 4.5 18.75Z" stroke="#0F172A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>`
+
+    const cameraButton = document.getElementById('hngsr-camera');
+    const videoContainer = document.getElementById('videoContainer');
+    
+    cameraButton.addEventListener('click', function (e){
+        e.preventDefault();
+        
+        if(camera) {
+            this.innerHTML = offIcon;
+            videoRecorder.stop();
+            videoContainer.style.display = 'none';
+        }else{
+            this.innerHTML = onIcon;
+            videoContainer.style.display = 'block';
+            startUserCameraRecording();
+        }
+
+        camera = !camera;
+    });
+}
