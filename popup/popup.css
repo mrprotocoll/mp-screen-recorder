@@ -264,6 +264,25 @@
     align-items: center;
 }
 
+.hngsr-popup #videoOutput {
+
+}
+
+.hngsr-popup .video .timing {
+
+}
+
+.hngsr-popup .video-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hngsr-popup .transcript {
+
+}
+
+
 /* Modal  */
 .hngsr-popup .modal {
     background: #c1c7d0c9;
