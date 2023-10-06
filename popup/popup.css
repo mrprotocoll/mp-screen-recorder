@@ -180,7 +180,7 @@
 
 .hngsr-popup .output {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 40% 60%;
     gap: 20px;
 }
 
@@ -265,11 +265,31 @@
 }
 
 .hngsr-popup #videoOutput {
-
+    height: 393px;
+    width: 100%;
 }
 
 .hngsr-popup .video .timing {
+    margin-top: -16px;
+    height: 4px;
+    position: relative;
+}
 
+.hngsr-popup .video #timing {
+    background: var(--hngsr-pri);
+    width: 20%;
+    height: 4px;
+    position: absolute;
+    z-index: 999;
+    border-radius: 24px;
+}
+
+.hngsr-popup .video .timing-bg {
+    position: absolute;
+    background: #DFE0E1;
+    width: 100%;
+    height: 4px;
+    border-radius: 24px;
 }
 
 .hngsr-popup .video-controls {
