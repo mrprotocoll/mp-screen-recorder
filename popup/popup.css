@@ -180,8 +180,8 @@
 
 .hngsr-popup .output {
     display: grid;
-    grid-template-columns: 40% 60%;
-    gap: 20px;
+    grid-template-columns: 55% 43%;
+    gap: 40px;
 }
 
 .hngsr-popup .flex-gap {
@@ -251,7 +251,7 @@
 }
 
 .hngsr-popup .share {
-    margin-top: 15px;
+    margin: 20px 0;
 }
 
 .hngsr-popup .share button{
@@ -267,6 +267,7 @@
 .hngsr-popup .video .player {
     border-radius: 8px;
     border: 1px solid  var(--hngsr-pri-200);
+    margin-bottom: 80px;
 }
 
 .hngsr-popup #videoOutput {
@@ -331,7 +332,7 @@
 }
 
 .hngsr-popup .transcript {
-
+    margin: 20px 0;
 }
 
 .hngsr-popup .transcript h2{
@@ -342,13 +343,35 @@
     font-weight: 600;
     line-height: normal;
 }
+
 .hngsr-popup .transcript select {
     border-radius: 4px;
     border: 1px solid #CFCFCF;
     padding: 8px;
+    margin: 10px 0;
 }
 
+.hngsr-popup .transcript select option {
+    color: #9D9D9D;
+    font-family: Work Sans, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
 
+.hngsr-popup .transcript .script {
+    padding: 10px 0;
+}
+
+.hngsr-popup .script p {
+    color: #000;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 163.023%;
+}
 
 /* Modal  */
 .hngsr-popup .modal {
