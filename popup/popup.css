@@ -264,6 +264,11 @@
     align-items: center;
 }
 
+.hngsr-popup .video .player {
+    border-radius: 8px;
+    border: 1px solid  var(--hngsr-pri-200);
+}
+
 .hngsr-popup #videoOutput {
     height: 393px;
     width: 100%;
@@ -271,7 +276,6 @@
 
 .hngsr-popup .video .timing {
     margin-top: -16px;
-    height: 4px;
     position: relative;
 }
 
@@ -296,6 +300,34 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 24px 40px;
+}
+
+.hngsr-popup .video-controls .duration p {
+    color: #939393;
+    font-family: Inter, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.hngsr-popup .control-settings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 40px;
+}
+
+.hngsr-popup .control-settings button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: transparent;
+    border: 0;
+    row-gap: 3px;
+    color: #141414;
 }
 
 .hngsr-popup .transcript {
