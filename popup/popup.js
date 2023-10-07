@@ -67,5 +67,27 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }
         play = !play;
     })
+
+    var progressBar = document.getElementById("progressBar");
+    var currentTime = document.getElementById("currentTime");
+    var totalDuration = document.getElementById("totalDuration");
+
+    video.addEventListener("timeupdate", function() {
+        // Calculate the percentage of video played
+        var progress = (video.currentTime / video.duration) * 100;
+
+        // Update the progress bar width
+        progressBar.style.width = progress + "%";
+
+        // Update the current time
+        var minutes = Math.floor(video.currentTime / 60);
+        var seconds = Math.floor(video.currentTime % 60);
+        currentTime.innerText = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+
+        // Update the total duration
+        var totalMinutes = Math.floor(video.duration / 60);
+        var totalSeconds = Math.floor(video.duration % 60);
+        totalDuration.innerText = totalMinutes + ":" + (totalSeconds < 10 ? "0" : "") + totalSeconds;
+    });
 })
 

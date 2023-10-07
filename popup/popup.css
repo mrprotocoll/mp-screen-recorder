@@ -280,26 +280,21 @@
     width: 100%;
 }
 
-.hngsr-popup .video .timing {
-    margin-top: -16px;
-    position: relative;
-}
-
-.hngsr-popup .video #timing {
+.hngsr-popup .video #progressBar {
     background: var(--hngsr-pri);
-    width: 20%;
+    width: 100%;
     height: 4px;
-    position: absolute;
     z-index: 999;
     border-radius: 24px;
+    transition: width 0.3s ease-in-out;
 }
 
-.hngsr-popup .video .timing-bg {
-    position: absolute;
+.hngsr-popup .video .progress-bg {
     background: #DFE0E1;
     width: 100%;
     height: 4px;
     border-radius: 24px;
+    margin-top: -16px;
 }
 
 .hngsr-popup .video-controls {
