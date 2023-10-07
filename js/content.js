@@ -78,12 +78,12 @@ function stopRecording() {
         isLastChunk = true
         recorder.stop();
         videoRecorder.stop();
+        showModal();
         // document.getElementById('hngsr').style.display = 'none';
     }
 }
 
 function displayControls()  {
-    console.log("appended")
     const tempElement = document.createElement('div');
 
     tempElement.innerHTML = Elements.controlsView;
