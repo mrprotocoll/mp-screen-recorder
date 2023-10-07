@@ -30,8 +30,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
     //     } )
     // })
 
-    // function to close modal when close button is clicked
-
-
 })
 

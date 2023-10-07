@@ -11,6 +11,8 @@ var timerInterval = null;
 var filename = new Date().getTime();
 var isLastChunk = false;
 
+var output = [];
+
 
 chrome.runtime.onMessage.addListener( (message, sender, sendResponse)=>{
     if(message.action === "request_recording"){
@@ -40,7 +42,8 @@ function startScreenRecording(stream){
     recorder.ondataavailable = function (event) {
         let recordedBlob = event.data;
         if (recordedBlob.size > 0) {
-            sendVideoChunkToServer(recordedBlob, id);
+            // sendVideoChunkToServer(recordedBlob, id);
+            output.push(recordedBlob);
         }
     }
 
@@ -78,7 +81,7 @@ function stopRecording() {
         isLastChunk = true
         recorder.stop();
         videoRecorder.stop();
-        showModal();
+        showModal(new Blob(output, { type: 'video/webm' }));
         // document.getElementById('hngsr').style.display = 'none';
     }
 }

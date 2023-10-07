@@ -79,7 +79,6 @@ const Elements =  {
             <div class="video">
                 <div class="player">
                     <video id="videoOutput">
-                        <source src="https://hngs5.mrprotocoll.me/storage/videos/1696225131_motivation_quickie_-_this_speech_will_pump_you_up_in_30_seconds.mp4">
                     </video>
                     <div class="progress-bg">
                         <div id="progressBar"></div>
@@ -280,10 +279,9 @@ function stopTimer() {
 }
 
 // download video recording
-function downloadRecording(blob) {
+function downloadRecording(url) {
     document.getElementById('hngr-download').addEventListener('click', function (){
         let a = document.createElement("a");
-        let url = URL.createObjectURL(blob);
         a.style.display = "none";
         a.href = url;
         a.download = "screen-recording.webm"
@@ -297,11 +295,13 @@ function downloadRecording(blob) {
     })
 }
 
-const showModal = () => {
-    const container = document.getElementById('#hngsr');
+const showModal = (blob) => {
+    const container = document.getElementById('hngsr');
     container.innerHTML = Elements.recordingModal;
     var video = document.getElementById("videoOutput");
 
+    let url = URL.createObjectURL(blob);
+    video.src = url;
     // add styling
     addCss(`
     .hngsr-popup .output {
@@ -584,6 +584,8 @@ const showModal = () => {
     playAndPauseVideo(video);
 
     videoProgressBar(video);
+
+    downloadRecording(url)
 
     // close modal
     document.querySelector('.hngsr-popup .close').addEventListener('click', () => {
