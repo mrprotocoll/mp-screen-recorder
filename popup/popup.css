@@ -254,6 +254,11 @@
     margin: 20px 0;
 }
 
+.hngsr-popup ul {
+    margin: 0;
+    list-style-type: none;
+}
+
 .hngsr-popup .share button{
     border-radius: 6px;
     border: 1px solid var(--hngsr-pri-200);
@@ -373,6 +378,9 @@
     line-height: 163.023%;
 }
 
+.hngsr-popup button {
+    cursor: pointer;
+}
 /* Modal  */
 .hngsr-popup .modal {
     background: #c1c7d0c9;
