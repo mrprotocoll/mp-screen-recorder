@@ -177,21 +177,3 @@
     font-weight: 500;
     color: var(--hngsr-pri);
 }
-
-
-.hngsr-popup .modal-footer {
-    border-top: 1px solid #ebecf0;
-    margin-top: 20px;
-}
-
-.hngsr-popup .modal .details {
-    margin: 20px 0;
-}
-
-.hngsr-popup .modal .item-title {
-    margin: 0 !important;
-}
-
-.hngsr-popup .modal .works {
-    margin: 0;
-}

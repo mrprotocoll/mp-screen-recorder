@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "HelpMeOut",
+    "name": "MP-Screen Recorder",
     "description": "This extension records the user's screen",
     "icons": {
         "128": "/images/icon.png"
