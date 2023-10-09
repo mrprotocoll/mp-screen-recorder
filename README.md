@@ -87,7 +87,7 @@ This should also work on any Chromium-based browser.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Screenshots
+## Screenshots
 
 <!-- AUTHORS -->
 
@@ -107,7 +107,7 @@ This should also work on any Chromium-based browser.
 
 - [ ] **Save recorded video to cloud storage and get shareable link**
 - [ ] **Activate Share buttons**
-- 
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
