@@ -61,6 +61,18 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Screenshots <a name="screenshots"></a>
+
+### Extension Panel.
+![image](https://github.com/mrprotocoll/mp-screen-recorder/assets/43586022/a4bf904e-4916-4c93-836f-28afbc439a9a)
+
+### Recording Screen.
+![image](https://github.com/mrprotocoll/mp-screen-recorder/assets/43586022/f319d4a0-3362-489f-b024-be4d82d5070f)
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
